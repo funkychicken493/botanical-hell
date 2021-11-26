@@ -1,0 +1,134 @@
+data_flower_types:
+    type: data
+    common:
+    - Bellflower
+    - Buttercup
+    - Rose
+    - California Poppy
+    - Daffodil
+    - Fennel
+    - Hyssop
+    - Lantana
+    - Pansy
+    - Petunia
+    - Shirlrey Poppy
+    - Violet
+    - Zinnia
+    uncommon:
+    - Aster
+    - Aubrieta
+    - Balloon Flower
+    - Bugloss
+    - Canterbury Bells
+    - Carnation
+    - Catmint
+    - Clary Sage
+    - Dahlia
+    - Gazania
+    - Geum
+    - Malva
+    - Marigold
+    - Periwinkle
+    - Primrose
+    - Rue
+    - Tansy
+    - Verbena
+    - Yarrow
+    rare:
+    - Baneberry
+    - Blackeyed Susan
+    - Bleeding Heart
+    - Bloodroot
+    - Boneset
+    - Butterfly Weed
+    - Catmint
+    - Chrysanthemum
+    - Comfrey
+    - Coneflower
+    - Cosmos
+    - Crocus
+    - Crown Imperial
+    - Delphinium
+    - Evergreen Candytuft
+    - Fountain Grass
+    - Gas Plant
+    - Globe Thistle
+    - Hollyhock
+    - Jack-in-the-Pulpit
+    - Lemon Balm
+    - Moonflower
+    - Pearly Everlasting
+    - Pincushion Flower
+    - Polka Dot Plant
+    - Sea Thrift
+    - Shooting Star
+    - Sweet Woodruff
+    - Windflower
+    - Wild Senna
+    unique:
+    - Flame Lily
+    - Ghost Orchid
+    - Hawaiian Hibiscus
+    - Desert Rose
+    - Amorphophallus Titanum
+    - Pineapple Lily
+    - Moth Orchid
+    - Parrot Flower
+    - Voodoo Lily
+    - Star Flower
+
+data_flower_adjectives:
+    type: data
+    adjectives:
+    - Awful
+    - Tiny
+    - Small
+    - Rustic
+    - Weak
+    - Okay
+    - Frail
+    - Dull
+    - Thin
+    - Thick
+    - Big
+    - Large
+    - Tall
+    - Short
+    - Rotted
+    - Fleshy
+    - Poisonous
+    - Infested
+    - Stringy
+    - Ugly
+    - Mushy
+    - Near-dead
+    - Weird
+    - Odd
+    - Sturdy
+    - Alright
+    - Nice
+    - Young
+    - Bitter
+    - Grainy
+    - Mutant
+    - Earthy
+    - Strange
+    - Beautiful
+    - Stout
+    - Leafy
+    - Exquisite
+    - Wild
+    - Old
+    - Vile
+    - Tropical
+    - Withered
+    - Limp
+    - Fresh
+    - Mature
+    - Seedless
+    - Seed-bearing
+    - Tough
+    - Kind Of Weird Looking To Be Quite Honest
+    - A Bit Strange
+    - Pretty Cool
+    - Utterly Epic
