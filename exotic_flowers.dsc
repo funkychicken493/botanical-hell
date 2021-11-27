@@ -1,0 +1,73 @@
+exotic_flowers:
+    type: world
+    debug: false
+    events:
+        on player breaks dandelion|poppy|blue_orchid|allium|azure_bluet|red_tulip|orange_tulip|white_tulip|pink_tulip|oxeye_daisy|cornflower|lily_of_the_valley:
+            - if <context.location.has_flag[exotic_flower]>:
+                - stop
+            - if <context.location.has_flag[almanac_tried]>:
+                - stop
+            - define random <util.random.int[1].to[100]>
+            - if <[random]> != 100:
+                - stop
+            - if <context.location.has_flag[player_manipulated]>:
+                - stop
+            - determine passively NOTHING
+            - choose <context.location.material.name>:
+                - case dandelion:
+                    - define flower_color Yellow
+                - case poppy red_tulip:
+                    - define flower_color Red
+                - case blue_orchid cornflower:
+                    - define flower_color Blue
+                - case allium pink_tulip:
+                    - define flower_color Pink
+                - case azure_bluet lily_of_the_valley white_tulip oxeye_daisy:
+                    - define flower_color White
+                - case orange_tulip:
+                    - define flower_color Orange
+            - define random <util.random.int[1].to[100]>
+            - if <[random]> >= 1 && <[random]> <= 40:
+                - define flower_type <script[data_flower_types].data_key[common].random[1].get[1]>
+                - define rarity <&7>Common
+                - define color <&7>
+                - playeffect redstone at:<context.location> special_data:1|gray quantity:100 offset:1,1,1
+            - else if <[random]> >= 41 && <[random]> <= 70:
+                - define flower_type <script[data_flower_types].data_key[uncommon].random[1].get[1]>
+                - define rarity <&a>Uncommon
+                - define color <&a>
+                - playeffect redstone at:<context.location> special_data:1|green quantity:100 offset:1,1,1
+            - else if <[random]> >= 71 && <[random]> <= 90:
+                - define flower_type <script[data_flower_types].data_key[rare].random[1].get[1]>
+                - define rarity <&b>Rare
+                - define color <&b>
+                - playeffect redstone at:<context.location> special_data:1|aqua quantity:100 offset:1,1,1
+            - else if <[random]> >= 91 && <[random]> <= 100:
+                - define flower_type <script[data_flower_types].data_key[unique].random[1].get[1]>
+                - define rarity <&c>Unique
+                - define color <&c>
+                - playeffect redstone at:<context.location> special_data:1|red quantity:100 offset:1,1,1
+            - define flower_adjective <script[data_flower_adjectives].data_key[adjectives].random[1].get[1]>
+            - define name "<[flower_adjective]> <[flower_color]> <[flower_type]>"
+            - flag <context.location> almanac_tried:!
+            - narrate "<[color]><bold>You found a <[name]>!"
+            - drop "<context.location.material.item.with[display=<&f><[name]>;lore=<list[<&5><&l>Exotic Flower|<[rarity]>]>;enchantments=<map[unbreaking=1]>;hides=all].with_flag[exotic_flower:true].with_flag[exotic_id:<[name]>].with_flag[exotic_rarity:<[rarity]>]>" <context.location>
+        on player places dandelion|poppy|blue_orchid|allium|azure_bluet|red_tulip|orange_tulip|white_tulip|pink_tulip|oxeye_daisy|cornflower|lily_of_the_valley:
+            - if !<context.item_in_hand.has_flag[exotic_flower]>:
+                - stop
+            - flag <context.location> exotic_flower:true
+            - flag <context.location> exotic_id:<context.item_in_hand.flag[exotic_id]>
+            - flag <context.location> exotic_rarity:<context.item_in_hand.flag[exotic_rarity]>
+            - flag <context.location> almanac_tried:!
+        on player breaks dandelion|poppy|blue_orchid|allium|azure_bluet|red_tulip|orange_tulip|white_tulip|pink_tulip|oxeye_daisy|cornflower|lily_of_the_valley location_flagged:exotic_flower:
+            - if !<context.location.has_flag[exotic_flower]>:
+                - stop
+            - determine passively NOTHING
+            - define name <context.location.flag[exotic_id]>
+            - define rarity <context.location.flag[exotic_rarity]>
+            - flag <context.location> exotic_flower:!
+            - flag <context.location> exotic_id:!
+            - flag <context.location> exotic_rarity:!
+            - flag <context.location> almanac_tried:!
+            - narrate "You picked up a <[name]>!"
+            - drop "<context.location.material.item.with[display=<&f><[name]>;lore=<list[<&5><&l>Exotic Flower|<[rarity]>]>;enchantments=<map[unbreaking=1]>;hides=all].with_flag[exotic_flower:true].with_flag[exotic_id:<[name]>].with_flag[exotic_rarity:<[rarity]>]>" <context.location>
